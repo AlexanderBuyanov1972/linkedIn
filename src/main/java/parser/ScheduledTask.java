@@ -37,9 +37,12 @@ class ScheduledTask extends TimerTask {
     }
 
     public static void writeFile() throws IOException {
-        String[] lines = (Files.lines(Paths.get(fileName)).reduce("", (a, b) -> a + "\n" + b)).split(" ");
-        for (int i = 0; lines.length > i; i++) {
-            testid.add(lines[i] + " ,");
+        Scanner in = new Scanner(new File("list_id.txt"));
+        while(in.hasNext()){
+            if(!in.equals("\n")){
+                String a = in.nextLine();
+                testid.add(a);
+               }
         }
     }
 
