@@ -1,5 +1,6 @@
 package parser;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -10,12 +11,12 @@ import java.util.Timer;
 public class ParserLinkedIn {
 
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
+        ScheduledTask.writeFile();
         Timer time = new Timer();               // Instantiate Timer Object
         ScheduledTask st = new ScheduledTask(); // Instantiate SheduledTask class
         time.schedule(st, 0, 1000);
     }
-
         }
 
 
